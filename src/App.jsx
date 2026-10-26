@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/Header.jsx";
 import Navbar from "./components/Navbar.jsx";
-import Studentcard from "./components/studentcard.jsx";
+import StudentCard from "./components/StudentCard.jsx";
 import Footer from "./components/Footer.jsx";
 
 import mine from "./assets/lol.jpeg";
@@ -43,11 +43,11 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <Navbar />
+      <Navbar />+
 
       <main className="container">
         {etudiants.map((etudiant) => (
-          <Studentcard
+          <StudentCard
             key={etudiant.email}
             prenom={etudiant.prenom}
             nom={etudiant.nom}

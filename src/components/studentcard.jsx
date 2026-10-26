@@ -1,7 +1,7 @@
-import "./studentcard.css";
+import "./StudentCard.css";
 import defaultImage from "../assets/lol.jpeg";
 
-function Studentcard(props) {
+function StudentCard(props) {
   const ville = props.ville || "Non renseignée";
   const image = props.image || defaultImage;
 
@@ -40,4 +40,4 @@ function Studentcard(props) {
   );
 }
 
-export default studentcard;
+export default StudentCard;
