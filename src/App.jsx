@@ -1,48 +1,68 @@
-
 import "./App.css";
-import photo from'./assets/lol.jpeg';
+import Header from "./components/Header.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Studentcard from "./components/studentcard.jsx";
+import Footer from "./components/Footer.jsx";
 
-const nom = "habli alae";
-const email = "habliala119@gmail.com";
-const telephone = "+21655046513";
-const filiere = "Génie Logiciel et Systèmes d'Information";
-const groupe = "GLSI 2A";
-const ville = "Kairouane";
-const image = photo
+import mine from "./assets/lol.jpeg";
+const etudiants = [
+  {
+    prenom: "alae",
+    nom: "habli",
+    email: "habliala119@gmail.com",
+    telephone: "55 046 513",
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: "2ème année",
+    groupe: "GLSI 2",
+    ville: "kairaoun",
+    image: mine,
+  },
+  {
+    prenom: "Aziz",
+    nom: "Trabelsi",
+    email: "aziz.trabelsi@gmail.com",
+    telephone: "+216 22 222 222",
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: "2ème année",
+    groupe: "GLSI 1",
+    ville: "Sousse",
+  },
+  {
+    prenom: "Mariem",
+    nom: "Khalfallah",
+    email: "mariem.khalfallah@gmail.com",
+    telephone: "+216 99 999 999",
+    filiere: "Génie Logiciel et Systèmes d'Information",
+    anneeEtude: "2ème année",
+    groupe: "GLSI 2",
+    
+  },
+];
+
 function App() {
   return (
-    <div>
-      <h1>Fiche étudiant</h1>
-      <img
-      src={image}
-      alt="image"
-      style={{
-        width:'150px',
-        height:'150px',
-        borderRadius: '50%',
-        objectift :'cover'
-    
-      }}
-    ></img>
-      
-      <p>Nom & Prénom : {nom}</p>
-      <p>Email : {email}</p>
-      <p>Téléphone : {telephone}</p>
-      <p>Filière : {filiere}</p>
-      <p>Année d'étude : </p>
-      <p>Groupe : {groupe}</p>
-      <p>Ville : {ville}</p>
-      <a href={`mailto:${email}`}>
-  <button
-    style={{
-      backgroundColor: 'transparent',
-      color: '#2563eb',
-      border: '2px solid #2563eb',
-    }}
-  >
-    Contacter
-  </button>
-</a>
+    <div className="app">
+      <Header />
+      <Navbar />
+
+      <main className="container">
+        {etudiants.map((etudiant) => (
+          <Studentcard
+            key={etudiant.email}
+            prenom={etudiant.prenom}
+            nom={etudiant.nom}
+            email={etudiant.email}
+            telephone={etudiant.telephone}
+            filiere={etudiant.filiere}
+            anneeEtude={etudiant.anneeEtude}
+            groupe={etudiant.groupe}
+            ville={etudiant.ville}
+            image={etudiant.image}
+          />
+        ))}
+      </main>
+
+      <Footer />
     </div>
   );
 }
